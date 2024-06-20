@@ -53,6 +53,9 @@
     <div id="welcomeScreen">
         <button id="playButton">Enhorabuena, haz clic aquí para ver la 'flag'</button>
     </div>
+    <audio id="audioPlayer" src="rickroll.mp3" loop></audio>
+    <img src="gif.webp" alt="GIF" style="width: 100%; height: auto;">
+
     <script>
         function toggleFullScreen(elem) {
             if ((document.fullScreenElement!== undefined && document.fullScreenElement === null) || (document.msFullscreenElement!== undefined && document.msFullscreenElement === null) || (document.mozFullScreen!== undefined &&!document.mozFullScreen) || (document.webkitIsFullScreen!== undefined &&!document.webkitIsFullScreen) || (document.fullscreenElement!== undefined && document.fullscreenElement === null)) {
@@ -79,19 +82,16 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            var audioPlayer = document.getElementById('audioPlayer'); // Asegúrate de tener un elemento con id='audioPlayer' en tu HTML si planeas usarlo
+            var audioPlayer = document.getElementById('audioPlayer');
             var playButton = document.getElementById('playButton');
             var welcomeScreen = document.getElementById('welcomeScreen');
             var gifImage = document.querySelector('img');
 
             playButton.addEventListener('click', function() {
-                audioPlayer.play(); // Asegúrate de que 'audioPlayer' esté definido o remuévelo si no lo usas
+                audioPlayer.play();
                 gifImage.style.display = 'block';
                 welcomeScreen.style.display = 'none';
                 toggleFullScreen(document.documentElement); // Llamada a la función para pantalla completa
-
-                // Redirecciona a index2.html
-                window.location.href = "index2.html";
             });
         });
     </script>
